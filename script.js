@@ -1,10 +1,10 @@
 //your JS code here. If required.
-function playSound(sound) {
-    const audio = new Audio(`sounds/${sound}`);
-    audio.play();
-}
+document.querySelectorAll('.btn').forEach(button => {
+    button.addEventListener('click', () => {
+        let sound = new Audio('sounds/' + button.innerText + '.mp3');
+        sound.play();
+    });
+});
 
-function stopAllSounds() {
-    const allSounds = document.querySelectorAll('audio');
-    allSounds.forEach(sound => sound.pause());
-}
+document.querySelector('.stop').addEventListener('click', () => {
+});
